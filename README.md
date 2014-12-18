@@ -2,15 +2,19 @@
 
 This application is built on Slim Framework and is primarly used as an API to interact with various social accounts. Social accounts include Google Analytics, Twitter, Instagram, YouTube and Weather.
 
+This api layer is mainly focused on talking to various social api's. This api layer does not have authorization/authentication. However, there is an authorization built into the SLIM framework which can be utilized to achieve this.
+
 Url: [BASE_URL]/v1/
 
 
 ## SLIM FRAMEWORK
 Slim is a PHP micro framework that helps you quickly write simple yet powerful web applications and APIs.
 
+Url: http://slimframework.com/
+
 It is a standalone framework and all it requires is PHP 5.3.0 or higher. If you are going to use encrypted cookies, make sure mcrypt is installed on the server.
 
-If your the url is not working Ex: [BASE_URL]/v1/ga/getBrowserStats gives you 404 Page Not Found then try this [BASE_URL]/index.php/v1/ga/getBrowserStats. If this url works make sure your .htaccess and vhosts matches the following 
+If your the url is not working Ex: [BASE_URL]/v1/ga/getBrowserStats gives you 404 Page Not Found then try this [BASE_URL]/index.php/v1/ga/getBrowserStats. If this url works make sure your .htaccess and vhosts matches the following.
 
 ```php
 RewriteCond %{REQUEST_FILENAME} !-f
