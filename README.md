@@ -4,6 +4,38 @@ This application is built on Slim Framework and is primarly used as an API to in
 
 Url: [BASE_URL]/v1/
 
+
+## SLIM FRAMEWORK
+Slim is a PHP micro framework that helps you quickly write simple yet powerful web applications and APIs.
+
+It is a standalone framework and all it requires is PHP 5.3.0 or higher. If you are going to use encrypted cookies, make sure mcrypt is installed on the server.
+
+If your the url is not working Ex: [BASE_URL]/v1/ga/getBrowserStats gives you 404 Page Not Found then try this [BASE_URL]/index.php/v1/ga/getBrowserStats. If this url works make sure your .htaccess and vhosts matches the following 
+
+```php
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^ /index.php [QSA,L]
+```
+
+
+```php
+<VirtualHost *:80>
+    ServerAdmin me@mysite.com
+    DocumentRoot "/path/www.mysite.com/public_html"
+    ServerName mysite.com
+    ServerAlias www.mysite.com
+
+    #ErrorLog "logs/mysite.com-error.log"
+    #CustomLog "logs/mysite.com-access.log" combined
+
+    <Directory "/path/www.mysite.com/public_html">
+        AllowOverride All
+        Order allow,deny
+        Allow from all
+    </Directory>
+</VirtualHost>
+```
+
 ## API Details - V1
 
 ## GOOGLE ANALYTICS
