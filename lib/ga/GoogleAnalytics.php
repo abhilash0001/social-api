@@ -170,7 +170,7 @@ class GoogleAnalytics
 								    	), function($result){
 											$stats = array();
 											foreach ($result->rows as $page) {
-										  		$stats[] = array( 'url' => $page[0], 'page-views' => (Int)$page[1], 'uniquePageViews' => $page[2] );
+										  		$stats[] = array( 'url' => $page[0], 'page-views' => (Int)$page[1], 'uniquePageViews' => (Int)$page[2] );
 											}
 
 											$stats_encoded = json_encode($stats);
@@ -179,7 +179,7 @@ class GoogleAnalytics
 											return $stats_encoded;
 										});
 		} catch(Exception $e) {
- 			return ErrorHandler::message('G3', $e->getMessage());
+ 			return ErrorHandler::message('G4', $e->getMessage());
 		}
 	}
 }

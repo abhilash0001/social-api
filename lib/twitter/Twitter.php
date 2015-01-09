@@ -24,9 +24,9 @@ class Twitter {
 	}
 
 	public static function get(){
-		$cachedData = phpFastCache::get("twitter-tweets");
+		/*$cachedData = phpFastCache::get("twitter-tweets");
 		if ($cachedData != null)
-			return json_decode($cachedData);
+			return json_decode($cachedData);*/
 
 		try {
 			# Create the connection
@@ -41,7 +41,7 @@ class Twitter {
 		    $tweet = array();
 		    foreach ($tweets as $data) {
 				$t = new Tweet();
-				$t->id = $data->id;
+				$t->id = $data->id_str;
 				$t->text = self::linkify_twitter_status($data->text);
 				$t->date_tweeted = $data->created_at;
 				$t->retweet_count = $data->retweet_count;
